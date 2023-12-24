@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:900i'); */
+
+
+.hero-img-case {
+    margin-top: 2rem;
+   }
+
+.brands-case,
+.home-categories {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.uniq-img {
+    height: 22rem;
+    width: 24.7rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+}
+
+.category-desc {
+    font-family: 'Playfair Display', serif;
+    padding: 3rem 1rem;
+    border-right: 15px solid var(--secondary-color);
+    margin: 7rem 3rem 3rem 3rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+}
+
+.brand-desc {
+    margin: 10rem 3rem 3rem 3rem;
+
+}
+
+.unique-brands {
+    height: 15rem;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 10rem;
+
+}
+
+/* //Button  */
+.button {
+    border-radius: 4px;
+    background-color: var(--logo-color);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2rem;
+    padding: 2rem;
+    width: 20rem;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    opacity: 0;
+    top: 0;
+    right: -2rem;
+    transition: 0.9s;
+}
+
+.button:hover span {
+    padding-right: 2.5rem;
+}
+
+.button:hover span:after {
+    opacity: 0.7;
+    right: 0;
+}

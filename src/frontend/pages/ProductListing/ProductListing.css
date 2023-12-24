@@ -1,0 +1,74 @@
+.all-products-page {
+    gap: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 26rem;
+    padding: 3rem 9rem;
+}
+
+.product {
+    width: 30rem;
+    margin-left: 1rem;
+    box-shadow: 0 0 5px 3px rgba(158, 150, 150, 0.7);
+    border-radius: var(--border-radius);
+}
+
+.product-cantent {
+    padding: 0.5rem 2rem;
+}
+
+.product-img {
+    width: 28rem;
+    height: 23rem;
+    padding: 0.5rem;
+    margin-left: 0.8rem;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.product-name {
+    text-align: center;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+
+.rating-stuff {
+    display: flex;
+    width: 25rem;
+    justify-content: space-between;
+}
+
+.card-pre-price {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.addtocart-btn button {
+    margin: 1rem 0rem;
+    padding: 1rem 6rem;
+}
+
+.wislist-icon {
+    color: red;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 2.8rem;
+}
+
+.cart-wishlist {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-detail-page {
+    width: 70rem;
+    padding: 3rem;
+    border-radius: 10rem;
+    border-top: 2rem groove var(--logo-color);
+    border-bottom: 2rem groove var(--logo-color);
+}
+
+.product-detail-cantent {
+    width: 30rem;
+}
