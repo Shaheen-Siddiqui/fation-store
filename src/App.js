@@ -63,6 +63,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             {/* *******PRIVATE PAGES*******   */}
+            
             <Route
               path="/cart"
               element={

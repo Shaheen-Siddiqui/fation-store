@@ -1,4 +1,5 @@
 import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 
 //internal imports
 import "../Cart/Cart.css";
@@ -63,9 +64,19 @@ export const Checkout = () => {
           </div>
 
           <div className="place-order-btncase">
-            <button className="place-order-btn" onClick={userOrderPlaced}>
-              Place &nbsp; Order
-            </button>
+            <a
+              href="https://wa.me/9773758285?text=Hello%20there!"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="place-order-btn">
+                <img
+                  src="https://img.freepik.com/premium-vector/whatsapp-icon-3d-rendering_578229-154.jpg?size=338&ext=jpg&ga=GA1.1.1546980028.1703289600&semt=ais"
+                  alt="WhatsApp Logo"
+                />
+                <span>Chat on WhatsApp</span>
+              </button>
+            </a>
           </div>
         </div>
       </div>

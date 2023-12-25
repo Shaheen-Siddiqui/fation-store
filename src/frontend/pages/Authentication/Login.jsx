@@ -16,7 +16,7 @@ export const LogIn = () => {
     email: "",
     password: "",
   });
-  const { setAuthDispatch } = useContext(authContext);
+  const { setAuthDispatch, user } = useContext(authContext);
   const { email, password } = userLoginCredential;
 
   const userLoginHandler = async (event) => {
@@ -28,13 +28,17 @@ export const LogIn = () => {
       );
       setAuthDispatch({
         type: "USER_VELIDATED",
-        payload: { user: res.data.data, token: res.data.token },
+        payload: {
+          user: res.data.data,
+          token: res.data.token,
+        },
       });
 
+      localStorage.setItem("user", JSON.stringify(res.data.data));
       localStorage.setItem("token", res.data.token);
-      toast.success("Logged in successfully!", { className: "toast-styling" });
-      navigate('/product-listing')
 
+      toast.success("Logged in successfully!", { className: "toast-styling" });
+      navigate("/product-listing");
     } catch (error) {
       if (error.response) {
         toast.error(error.response.data.error, { className: "toast-styling" });

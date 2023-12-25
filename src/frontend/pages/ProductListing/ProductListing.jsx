@@ -17,18 +17,10 @@ import { productContext } from "../../hooks/context/productsContext";
 import { SideBar } from "../../components/SideBar/SideBar";
 
 export const ProductListing = () => {
-  const {
-    search,
-    filterProductByPriceRange,
-    filterBySearch,
-    productLoding,
-  } = useContext(filterContext);
+  const { search, filterProductByPriceRange, filterBySearch, productLoding } =
+    useContext(filterContext);
 
-  const {
-    isAddedIntoCart,
-    setProductDispatch
-  } = useContext(productContext);
-
+  const { isAddedIntoCart, setProductDispatch } = useContext(productContext);
 
   return (
     <div>
@@ -78,7 +70,7 @@ export const ProductListing = () => {
                           src={productImg}
                           alt="a new collections"
                         />
-                      </Link  >
+                      </Link>
 
                       <div className="product-cantent">
                         <h2 className="product-name">{title}</h2>
@@ -89,12 +81,6 @@ export const ProductListing = () => {
                         <p>{category} </p>
                         <div className="rating-stuff">
                           <p>{discount}</p>
-                          <p>
-                            <strong>
-                              <FontAwesomeIcon icon={faStar} />
-                              <em>{rating}</em>
-                            </strong>
-                          </p>
                         </div>
                         <div className="cart-wishlist">
                           <div className="addtocart-btn">
@@ -108,14 +94,22 @@ export const ProductListing = () => {
                             ) : (
                               <button
                                 className="login-btns"
-                                onClick={() => setProductDispatch({type:'ADD_TO_CART', payload:item})}
+                                onClick={() =>
+                                  setProductDispatch({
+                                    type: "ADD_TO_CART",
+                                    payload: item,
+                                  })
+                                }
                               >
                                 <FontAwesomeIcon icon={faCartPlus} /> add to
                                 cart
                               </button>
                             )}
                           </div>
-                         
+                          <strong  style={{fontSize:'1.6rem', color:"yellow"}}>
+                            <FontAwesomeIcon icon={faStar}/>
+                            <em>{rating}</em>
+                          </strong>
                         </div>
                       </div>
                     </div>

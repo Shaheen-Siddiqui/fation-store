@@ -5,7 +5,8 @@ import Tippy from "@tippyjs/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faBlenderPhone,
+  // faBlenderPhone,
+  faHatCowboy,
   faMagnifyingGlass,
   faCartArrowDown,
   faAddressCard,
@@ -40,10 +41,10 @@ export const Header = ({ bars, setBars }) => {
 
   const userLogoutHandler = () => {
     setAuthDispatch({ type: "USER_LOGOUT" });
-    setProductDispatch({ type: "USER_LOGGED_OUT" });
 
     localStorage.removeItem("user");
     localStorage.removeItem("token");
+
     toast.info("logged out successfully", {
       autoClose: 2000,
       className: "toast-styling",
@@ -56,8 +57,9 @@ export const Header = ({ bars, setBars }) => {
         <div className="header-container">
           <Link to="/" className="remove-ud">
             <div className="hdr-logo">
-              <FontAwesomeIcon icon={faBlenderPhone} />
-              <h2 className="logo-name">ABC Store</h2>
+              {/* <FontAwesomeIcon icon={faBlenderPhone} /> */}
+              <FontAwesomeIcon icon={faHatCowboy} />
+              <h2 className="logo-name">Amanullah store</h2>
             </div>
           </Link>
 
@@ -156,7 +158,7 @@ export const Header = ({ bars, setBars }) => {
         )}
       </div>
 
-      {Object.values(user).length !== 0 && isUserCaseOpen && (
+      {token && isUserCaseOpen && (
         <div className="user-detail-space">
           <h2>name</h2>
           <p className="current-user-detail">{user.fullName}</p>

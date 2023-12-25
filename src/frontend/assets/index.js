@@ -17,7 +17,7 @@ import changeOfAddress from './change-of-addresses.gif'
 
 export const sliderImages = [
     {
-      url: "https://i.etsystatic.com/31494395/r/il/9d7f32/3864881852/il_570xN.3864881852_189t.jpg",
+      url: "https://i.ibb.co/DtHGf3g/carou.jpg",
     },
     // {
     //   url: "https://img.freepik.com/premium-vector/minimalist-furniture-sale-banner-social-media-post-template_22857-382.jpg?w=2000",

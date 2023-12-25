@@ -45,11 +45,7 @@ export const productReducer = (productState, { type, payload }) => {
         cart: payload,
       };
 
-    case "USER_LOGGED_OUT":
-      return {
-        ...productState,
-        cart: [],
-      };
+  
     default:
       throw new Error(`invelid type ${type} check productReducer`);
   }

@@ -70,11 +70,11 @@ export const SideBar = () => {
           />
         </div>
 
-        <div
+        {/* <div
           className="category-case"
           onClick={() => setSearchParams({ filter: "active" })}
-        >
-          <h3>Category</h3>
+        > */}
+          {/* <h3>Category</h3>
           <label htmlFor="bed">
             <input
               checked={beds}
@@ -135,7 +135,7 @@ export const SideBar = () => {
             />
             luxury Set's
           </label>
-        </div>
+        </div> */}
 
         <div
           className="rating-case"

@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, json, useNavigate } from "react-router-dom";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
@@ -30,13 +30,20 @@ export const SignUp = () => {
         "http://localhost:3000/signup",
         userInformation
       );
-      localStorage.setItem("token", res.data.token);
+
       setAuthDispatch({
         type: "USER_VELIDATED",
-        payload: { user: res.data.data, token: res.data.token },
+        payload: {
+          user: res.data.data,
+          token: res.data.token,
+        },
       });
+
+      localStorage.setItem("user", JSON.stringify(res.data.data));
+      localStorage.setItem("token", res.data.token);
+
       toast.success("signedup successfully!", { className: "toast-styling" });
-      navigate('/product-listing')
+      navigate("/product-listing");
     } catch (error) {
       toast.error(error.response.data.error, { className: "toast-styling" });
       console.log(error);

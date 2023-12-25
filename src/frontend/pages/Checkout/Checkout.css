@@ -19,9 +19,10 @@
     border: 1rem solid var(--logo-color);
 }
 
-.radio-usename-select{
+.radio-usename-select {
     font-size: 1.5rem;
 }
+
 .place-order-case {
     height: 10rem;
     height: 10rem;
@@ -31,13 +32,15 @@
     border-radius: 1rem;
     padding: 0 1rem;
 }
-.username-text{
+
+.username-text {
     text-align: left;
-    /* margin-top: -5rem; */
 }
-.assress-text{
+
+.assress-text {
     margin-left: 10rem;
 }
+
 #radio-check-address {
     height: 61rem;
 }
@@ -47,24 +50,38 @@
     width: 20rem;
 }
 
-.place-order-btn {
-    width: 34rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 5px;
-    border: 2px solid var(--primary-color);
-    background-color: var(--logo-color);
-    outline: none;
-    cursor: pointer;
-    padding: 1.1rem 1rem;
-}
-
 .place-order-btncase {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: -1rem;
 
+}
+
+.place-order-btn {
+    width: 34rem;
+    background-color: #25d366;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.place-order-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 3rem;
+}
+
+.place-order-btn:hover {
+    background-color: #128c7e;
 }
 
 #checkout-item-box {
