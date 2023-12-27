@@ -1,18 +1,18 @@
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 //internal imports
-import "../Cart/Cart.css";
-import "./Checkout.css";
-import { productContext } from "../../hooks/context/productsContext";
-import { PlaceOrderModal } from "../../components/Modal/PlaceOrderModal";
+import '../Cart/Cart.css';
+import './Checkout.css';
+import { productContext } from '../../hooks/context/productsContext';
+import { PlaceOrderModal } from '../../components/Modal/PlaceOrderModal';
 
 export const Checkout = () => {
   const { cart, priceOfProductsWithQuantity, totalPrice, productsName } =
     useContext(productContext);
 
   const [modalBox, setModalBox] = useState(false);
-
+  let arr = [];
   const userOrderPlaced = () => setModalBox(true);
 
   return (
@@ -27,18 +27,21 @@ export const Checkout = () => {
           <div id="checkout-item-box">
             {productsName.map(({ title, qty }, index) => {
               return (
-                <div key={index}>
-                  <div className="price-string-number">
-                    <div className="price-strings">
-                      <p>{title}</p>
-                    </div>
+                arr.push('item: ', title, 'quantity: ', qty),
+                (
+                  <div key={index}>
+                    <div className="price-string-number">
+                      <div className="price-strings">
+                        <p>{title}</p>
+                      </div>
 
-                    <div className="price-numbers">
-                      <p> {qty}</p>
+                      <div className="price-numbers">
+                        <p> {qty}</p>
+                      </div>
                     </div>
+                    <hr className="checkout-products-hr" />
                   </div>
-                  <hr className="checkout-products-hr" />
-                </div>
+                )
               );
             })}
           </div>
@@ -65,7 +68,9 @@ export const Checkout = () => {
 
           <div className="place-order-btncase">
             <a
-              href="https://wa.me/9773758285?text=Hello%20there!"
+              href={`https://wa.me/${9354460572}? text= ${arr.map(
+                (item) => item
+              )} price : ${totalPrice}`}
               target="_blank"
               rel="noopener noreferrer"
             >
