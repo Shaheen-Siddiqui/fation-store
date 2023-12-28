@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Audio } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 
+
 //internal imports
 import "./ProductListing.css";
 import "../../components/Header/Header.css";
@@ -55,11 +56,9 @@ export const ProductListing = () => {
                   const {
                     category,
                     rating,
-                    discount,
-                    prePrice,
                     price,
                     title,
-                    productImg,
+                    imageUrl,
                     _id,
                   } = item;
                   return (
@@ -67,7 +66,7 @@ export const ProductListing = () => {
                       <Link to={`/product-detail/${_id}`}>
                         <img
                           className="product-img"
-                          src={productImg}
+                          src={imageUrl}
                           alt="a new collections"
                         />
                       </Link>
@@ -76,11 +75,9 @@ export const ProductListing = () => {
                         <h2 className="product-name">{title}</h2>
                         <h2>
                           price: {price} &nbsp;
-                          <span className="card-pre-price">{prePrice}</span>
                         </h2>
                         <p>{category} </p>
                         <div className="rating-stuff">
-                          <p>{discount}</p>
                         </div>
                         <div className="cart-wishlist">
                           <div className="addtocart-btn">

@@ -8,20 +8,20 @@ import image3 from "./image3.webp";
 import image5 from "./image5.jpg";
 import image6 from "./image6.webp";
 // brands
-import godregBrand from "./godreg-brand.jpg";
-import hometownBrand from "./hometown-brand.avif";
-import nilKamal from "./nikamal-brand.jpg";
-import woodenStreetBrand from "./woodenStreet-brand.avif";
+// import godregBrand from "./godreg-brand.jpg";
+// import hometownBrand from "./hometown-brand.avif";
+// import nilKamal from "./nikamal-brand.jpg";
+// import woodenStreetBrand from "./woodenStreet-brand.avif";
 import empatyCart from './empty-cart.gif'
-import changeOfAddress from './change-of-addresses.gif'
+// import changeOfAddress from './change-of-addresses.gif'
 
 export const sliderImages = [
-    {
-      url: "https://i.ibb.co/DtHGf3g/carou.jpg",
-    },
     // {
-    //   url: "https://img.freepik.com/premium-vector/minimalist-furniture-sale-banner-social-media-post-template_22857-382.jpg?w=2000",
+    //   url: "",
     // },
+    {
+      url: "https://res.cloudinary.com/dunfe1kwv/image/upload/v1703787952/waistcoat/qh42nktj7zscylgy41lw.jpg",
+    },
     // {
     //   url: "https://smartfurniture.com.eg/wp-content/uploads/2022/06/Cover-1.png",
     // },
@@ -37,13 +37,13 @@ export {
   image1,
   image2,
   image3,
-  godregBrand,
-  hometownBrand,
-  nilKamal,
-  woodenStreetBrand,
+  // godregBrand,
+  // hometownBrand,
+  // nilKamal,
+  // woodenStreetBrand,
   image5,
   image6,
   empatyCart,
-  changeOfAddress,
+  // changeOfAddress,
   
 };

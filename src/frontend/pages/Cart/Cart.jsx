@@ -48,18 +48,16 @@ export const Cart = () => {
           <div className="single-card-wrap">
             {cart.map((item) => {
               const {
-                prePrice,
                 category,
                 price,
-                productImg,
+                imageUrl,
                 qty,
                 _id,
-                discount,
               } = item;
               return (
                 <div className="single-card" key={_id}>
                   <img
-                    src={productImg}
+                    src={imageUrl}
                     alt="new bedsheets new designs"
                     className="single-card-img"
                   />
@@ -67,10 +65,6 @@ export const Cart = () => {
                     <h2 className="card-heading">{category}</h2>
                     <div className="product-price">
                       <h2>₹ {price}</h2>
-                      <p className="card-pre-price">₹ {prePrice}</p>
-                    </div>
-                    <div className="product-price">
-                      <h4 className="discount-price">{discount}</h4>
                     </div>
                     <div className="product-quantity">
                       <p>Quantity:</p>

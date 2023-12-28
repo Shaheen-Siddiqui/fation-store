@@ -10,7 +10,7 @@ export const ProductContextProvider = ({ children }) => {
   const { cart } = productState;
 
   const priceOfProductsWithQuantity = cart.reduce(
-    (acc, { prePrice, qty }) => (acc = acc + Number(prePrice)) * qty,
+    (acc, { price, qty }) => (acc = acc + Number(price)) * qty,
     0
   );
 

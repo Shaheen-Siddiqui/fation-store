@@ -1,19 +1,23 @@
-import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 
 //internal imports
-import '../Cart/Cart.css';
-import './Checkout.css';
-import { productContext } from '../../hooks/context/productsContext';
-import { PlaceOrderModal } from '../../components/Modal/PlaceOrderModal';
+import "../Cart/Cart.css";
+import "./Checkout.css";
+import { productContext } from "../../hooks/context/productsContext";
+import { authContext } from "../../hooks/context/authContext";
+
+import { PlaceOrderModal } from "../../components/Modal/PlaceOrderModal";
 
 export const Checkout = () => {
   const { cart, priceOfProductsWithQuantity, totalPrice, productsName } =
     useContext(productContext);
+  const {
+    user: { fullName, email, phoneNumber },
+  } = useContext(authContext);
 
-  const [modalBox, setModalBox] = useState(false);
+  const [modalBox] = useState(false);
   let arr = [];
-  const userOrderPlaced = () => setModalBox(true);
 
   return (
     <>
@@ -27,7 +31,7 @@ export const Checkout = () => {
           <div id="checkout-item-box">
             {productsName.map(({ title, qty }, index) => {
               return (
-                arr.push('item: ', title, 'quantity: ', qty),
+                arr.push(`item: *${title}*,  quantity: *${qty}*`),
                 (
                   <div key={index}>
                     <div className="price-string-number">
@@ -68,9 +72,16 @@ export const Checkout = () => {
 
           <div className="place-order-btncase">
             <a
-              href={`https://wa.me/${9354460572}? text= ${arr.map(
-                (item) => item
-              )} price : ${totalPrice}`}
+              href={`https://wa.me/7417161494?text=${arr
+                .map((item) => `${item},%0A`)
+                .join("")}
+                price: *${totalPrice}*,%0A%0A
+                _*Customer Information*_%0A
+                name: ${fullName},%0A
+                email: ${email},%0A
+                Mobile: ${phoneNumber}
+
+                `}
               target="_blank"
               rel="noopener noreferrer"
             >

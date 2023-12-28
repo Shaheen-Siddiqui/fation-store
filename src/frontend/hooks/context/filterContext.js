@@ -1,8 +1,10 @@
-import { createContext, useReducer, useState } from "react";
-import { filterReducer } from "../reducer/filterReducer";
-import {products as allnewProducts} from '../../../db/products';
-import {categories} from '../../../db/categories'
+import axios from "axios";
+import { toast } from "react-toastify";
 
+import { createContext, useReducer, useState, useEffect } from "react";
+import { filterReducer } from "../reducer/filterReducer";
+// import { products as allnewProducts } from "../../../db/products";
+import { categories } from "../../../db/categories";
 
 //---------//
 export const filterContext = createContext();
@@ -10,9 +12,26 @@ export const filterContext = createContext();
 export const FilterContextProvider = ({ children }) => {
   const [productLoding] = useState(false);
   const [categoriesData] = useState(categories);
-  const [products] = useState(allnewProducts);
+  const [products, setProducts] = useState([]);
 
 
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:3005/product");
+        setProducts(response.data.map((item) => ({ ...item, qty: 1 })));
+      } catch (error) {
+        if (error.response && error.response.status === 404) {
+          toast.error("No Product Found:");
+        } else {
+          toast.error("Error fetching products:");
+        }
+        console.log(error, "error");
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   const [filterState, setfilterDispatch] = useReducer(filterReducer, {
     filteredArray: [],
@@ -37,7 +56,6 @@ export const FilterContextProvider = ({ children }) => {
     dressingTables,
     priceRange,
   } = filterState;
-
 
   let filterBySearch =
     search.length > 0

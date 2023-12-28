@@ -7,10 +7,10 @@ import "./Home.css";
 import "../../components/Header/Header.css";
 import { Footer } from "../../components/Footer/Footer";
 import {
-  godregBrand,
-  hometownBrand,
-  nilKamal,
-  woodenStreetBrand,
+  // godregBrand,
+  // hometownBrand,
+  // nilKamal,
+  // woodenStreetBrand,
   sliderImages,
 } from "../../assets";
 import { filterContext } from "../../hooks/context/filterContext";
@@ -52,8 +52,7 @@ export const Home = () => {
       <div className="home-categories">
         {categoriesData.map(({ categoryImage, categoryName }, index) => {
           return (
-            <figure key={index}
-            >
+            <figure key={index}>
               <img
                 className="uniq-img"
                 src={categoryImage}
@@ -68,10 +67,26 @@ export const Home = () => {
 
       <h1 className="category-desc brand-desc">Top Brands</h1>
       <div className="brands-case">
-        <img src={godregBrand} alt="" className="unique-brands" />
-        <img src={hometownBrand} alt="" className="unique-brands" />
-        <img src={nilKamal} alt="" className="unique-brands" />
-        <img src={woodenStreetBrand} alt="" className="unique-brands" />
+        <img
+          src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0004/8504/brand.gif?itok=j8YhOFgu"
+          alt="brand image"
+          className="unique-brands"
+          />
+        <img
+          alt="brand image"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAePGP9j7PoYpxs1L37PgQiJaQBh-RdvXpGeOvKNk8laPxsTJ1SolvBulTBsBhc69RMOA&usqp=CAU"
+          className="unique-brands"
+          />
+        <img
+          src="https://c8.alamy.com/comp/2J696ED/waistcoat-icon-monochrome-simple-clothes-icon-for-templates-web-design-and-infographics-2J696ED.jpg"
+          alt="brand image"
+          className="unique-brands"
+        />
+        <img
+          alt="brand image"
+          src="https://i.pinimg.com/originals/e8/f8/e4/e8f8e409ac1230b063726b4d9abfb32e.jpg"
+          className="unique-brands"
+        />
       </div>
       <Footer />
     </>
