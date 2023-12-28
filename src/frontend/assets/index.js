@@ -17,8 +17,9 @@ import changeOfAddress from './change-of-addresses.gif';
 
 export const sliderImages = [
   {
-    url: 'https://res.cloudinary.com/dunfe1kwv/image/upload/v1703787952/waistcoat/qh42nktj7zscylgy41lw.jpg',
+    url: 'http://res.cloudinary.com/dunfe1kwv/image/upload/v1703791230/cl6srsr4t3mcvs5rcu9n.png',
   },
+
   {
     url: 'http://res.cloudinary.com/dunfe1kwv/image/upload/v1703790785/oqftyanangtqxkshsqqr.png',
   },
@@ -26,10 +27,10 @@ export const sliderImages = [
     url: 'http://res.cloudinary.com/dunfe1kwv/image/upload/v1703790988/k9btflhkstqyvxnol5uz.png',
   },
   {
-    url: 'http://res.cloudinary.com/dunfe1kwv/image/upload/v1703791141/itfiklw2gvp2ewpyqtgy.png',
+    url: 'https://res.cloudinary.com/dunfe1kwv/image/upload/v1703787952/waistcoat/qh42nktj7zscylgy41lw.jpg',
   },
   {
-    url: 'http://res.cloudinary.com/dunfe1kwv/image/upload/v1703791230/cl6srsr4t3mcvs5rcu9n.png',
+    url: 'http://res.cloudinary.com/dunfe1kwv/image/upload/v1703791141/itfiklw2gvp2ewpyqtgy.png',
   },
 ];
 export {
