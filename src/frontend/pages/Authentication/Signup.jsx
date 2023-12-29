@@ -27,7 +27,7 @@ export const SignUp = () => {
     event.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3000/signup",
+        "https://abcstore-backend.onrender.com/signup",
         userInformation
       );
 

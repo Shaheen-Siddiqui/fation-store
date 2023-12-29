@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 
 import { createContext, useReducer, useState, useEffect } from "react";
 import { filterReducer } from "../reducer/filterReducer";
-// import { products as allnewProducts } from "../../../db/products";
 import { categories } from "../../../db/categories";
 
 //---------//
@@ -18,7 +17,7 @@ export const FilterContextProvider = ({ children }) => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("http://localhost:3005/product");
+        const response = await axios.get("https://admin-panel-j1q2.onrender.com/product");
         setProducts(response.data.map((item) => ({ ...item, qty: 1 })));
       } catch (error) {
         if (error.response && error.response.status === 404) {

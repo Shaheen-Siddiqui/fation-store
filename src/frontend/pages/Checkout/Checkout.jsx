@@ -1,5 +1,4 @@
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
 
 //internal imports
 import "../Cart/Cart.css";
@@ -7,7 +6,6 @@ import "./Checkout.css";
 import { productContext } from "../../hooks/context/productsContext";
 import { authContext } from "../../hooks/context/authContext";
 
-import { PlaceOrderModal } from "../../components/Modal/PlaceOrderModal";
 
 export const Checkout = () => {
   const { cart, priceOfProductsWithQuantity, totalPrice, productsName } =
@@ -16,7 +14,6 @@ export const Checkout = () => {
     user: { fullName, email, phoneNumber },
   } = useContext(authContext);
 
-  const [modalBox] = useState(false);
   let arr = [];
 
   return (
@@ -96,7 +93,6 @@ export const Checkout = () => {
           </div>
         </div>
       </div>
-      {modalBox && <PlaceOrderModal />}
     </>
   );
 };

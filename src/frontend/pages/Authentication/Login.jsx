@@ -23,7 +23,7 @@ export const LogIn = () => {
     event.preventDefault();
     try {
       const res = await axios.post(
-        "http://localhost:3000/login",
+        "https://abcstore-backend.onrender.com/login",
         userLoginCredential
       );
       setAuthDispatch({
