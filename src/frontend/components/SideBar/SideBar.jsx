@@ -10,12 +10,12 @@ export const SideBar = () => {
     sort,
     rating,
     priceRange,
-    beds,
-    sofa,
-    luxurySets,
-    dressingTables,
-    filteredArray,
-    filterOnlyGifts,
+    // beds,
+    // sofa,
+    // luxurySets,
+    // dressingTables,
+    // filteredArray,
+    // filterOnlyGifts,
   } = useContext(filterContext);
 
   const [searchParameter, setSearchParams] = useSearchParams();

@@ -16,7 +16,7 @@ export const LogIn = () => {
     email: "",
     password: "",
   });
-  const { setAuthDispatch, user } = useContext(authContext);
+  const { setAuthDispatch} = useContext(authContext);
   const { email, password } = userLoginCredential;
 
   const userLoginHandler = async (event) => {
