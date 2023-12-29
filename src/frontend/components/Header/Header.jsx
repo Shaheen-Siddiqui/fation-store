@@ -35,7 +35,7 @@ export const Header = ({ bars, setBars }) => {
   ];
   const [isUserCaseOpen, setIsUserCaseOpen] = useState(false);
   const { setfilterDispatch, search } = useContext(filterContext);
-  const { cart, setProductDispatch } = useContext(productContext);
+  const { cart } = useContext(productContext);
   const { token, user, setAuthDispatch } = useContext(authContext);
   const navigate = useNavigate();
 

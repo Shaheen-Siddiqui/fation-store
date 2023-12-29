@@ -1,4 +1,4 @@
-import { createContext, useState, useReducer } from "react";
+import { createContext, useReducer } from "react";
 import { productReducer } from "../reducer/ProductReducer";
 
 //------------//
@@ -19,7 +19,7 @@ export const ProductContextProvider = ({ children }) => {
   const productsName = cart.map((value) => value);
 
   const isAddedIntoCart = (productItem) =>
-    cart.find((item) => item._id == productItem._id);
+    cart.find((item) => item._id === productItem._id);
 
  
 
