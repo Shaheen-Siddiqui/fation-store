@@ -69,21 +69,21 @@ export const Home = () => {
       <div className="brands-case">
         <img
           src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0004/8504/brand.gif?itok=j8YhOFgu"
-          alt="brand image"
+          alt="brand"
           className="unique-brands"
           />
         <img
-          alt="brand image"
+          alt="brand"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAePGP9j7PoYpxs1L37PgQiJaQBh-RdvXpGeOvKNk8laPxsTJ1SolvBulTBsBhc69RMOA&usqp=CAU"
           className="unique-brands"
           />
         <img
           src="https://c8.alamy.com/comp/2J696ED/waistcoat-icon-monochrome-simple-clothes-icon-for-templates-web-design-and-infographics-2J696ED.jpg"
-          alt="brand image"
+          alt="brand"
           className="unique-brands"
         />
         <img
-          alt="brand image"
+          alt="brand"
           src="https://i.pinimg.com/originals/e8/f8/e4/e8f8e409ac1230b063726b4d9abfb32e.jpg"
           className="unique-brands"
         />

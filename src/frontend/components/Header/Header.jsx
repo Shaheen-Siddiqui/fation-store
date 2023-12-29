@@ -5,12 +5,10 @@ import Tippy from "@tippyjs/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  // faBlenderPhone,
   faHatCowboy,
   faMagnifyingGlass,
   faCartArrowDown,
   faAddressCard,
-  faHeart,
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import { filterContext } from "../../hooks/context/filterContext";
@@ -19,20 +17,6 @@ import { authContext } from "../../hooks/context/authContext";
 import { toast } from "react-toastify";
 
 export const Header = ({ bars, setBars }) => {
-  const headerNavigate = [
-    {
-      to: "/wish-list",
-      icon: faHeart,
-    },
-    {
-      to: "/cart",
-      icon: faCartArrowDown,
-    },
-    {
-      to: "/user-profile",
-      icon: faAddressCard,
-    },
-  ];
   const [isUserCaseOpen, setIsUserCaseOpen] = useState(false);
   const { setfilterDispatch, search } = useContext(filterContext);
   const { cart } = useContext(productContext);
@@ -57,7 +41,6 @@ export const Header = ({ bars, setBars }) => {
         <div className="header-container">
           <Link to="/" className="remove-ud">
             <div className="hdr-logo">
-              {/* <FontAwesomeIcon icon={faBlenderPhone} /> */}
               <FontAwesomeIcon icon={faHatCowboy} />
               <h2 className="logo-name">Abdullah store</h2>
             </div>
@@ -133,15 +116,19 @@ export const Header = ({ bars, setBars }) => {
               <h5>Explore</h5>
             </Link>
 
-            {headerNavigate.map(({ to, icon }, index) => {
-              return (
-                <Link to={to} onClick={() => setBars(false)} key={index}>
-                  <i>
-                    <FontAwesomeIcon icon={icon} />
-                  </i>
-                </Link>
-              );
-            })}
+            <Link to="/cart" onClick={() => setBars(false)}>
+              <i>
+                <FontAwesomeIcon icon={faCartArrowDown} />
+              </i>
+            </Link>
+
+            <i
+              onClick={() => {
+                setIsUserCaseOpen(!isUserCaseOpen);
+              }}
+            >
+              <FontAwesomeIcon icon={faAddressCard} />
+            </i>
 
             <Link to="/login" onClick={() => setBars(false)}>
               {token ? (
