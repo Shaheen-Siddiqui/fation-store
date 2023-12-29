@@ -59,13 +59,13 @@ export const ProductListing = () => {
                   } = item;
                   return (
                     <div className="product" key={_id}>
-                      <Link to={`/product-detail/${_id}`}>
+                      {/* <Link to={`/product-detail/${_id}`}> */}
                         <img
                           className="product-img"
                           src={imageUrl}
                           alt="a new collections"
                         />
-                      </Link>
+                      {/* </Link> */}
 
                       <div className="product-cantent">
                         <h2 className="product-name">{title}</h2>
