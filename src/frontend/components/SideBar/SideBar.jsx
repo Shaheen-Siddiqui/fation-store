@@ -15,6 +15,7 @@ export const SideBar = () => {
     luxurySets,
     dressingTables,
     filteredArray,
+    filterOnlyGifts,
   } = useContext(filterContext);
 
   const [searchParameter, setSearchParams] = useSearchParams();
@@ -74,7 +75,7 @@ export const SideBar = () => {
           className="category-case"
           onClick={() => setSearchParams({ filter: "active" })}
         > */}
-          {/* <h3>Category</h3>
+        {/* <h3>Category</h3>
           <label htmlFor="bed">
             <input
               checked={beds}
@@ -245,6 +246,18 @@ export const SideBar = () => {
             />
             Price Low to High
           </label>
+        </div>
+
+        <div
+          className="view-gift-case"
+          onClick={() => setSearchParams({ filter: "active" })}
+        >
+          <button
+            className="shining-button"
+            onClick={() => setfilterDispatch({type:'FILTER_GIFTS'})}
+          >
+            Look Towards Gifts &raquo;
+          </button>
         </div>
       </div>
     </>

@@ -18,7 +18,7 @@ import { productContext } from "../../hooks/context/productsContext";
 import { SideBar } from "../../components/SideBar/SideBar";
 
 export const ProductListing = () => {
-  const { search, filterProductByPriceRange, filterBySearch, productLoding } =
+  const { search, filterOnlyGifts, filterBySearch, productLoding } =
     useContext(filterContext);
 
   const { isAddedIntoCart, setProductDispatch } = useContext(productContext);
@@ -26,10 +26,6 @@ export const ProductListing = () => {
   return (
     <div>
       <SideBar />
-
-      <center>
-        <h2>Total product: {filterProductByPriceRange.length} </h2>
-      </center>
 
       <div className="all-products-page">
         {productLoding ? (
@@ -52,7 +48,7 @@ export const ProductListing = () => {
               >{`Opps! nothing Matches Title: ${search}`}</h1>
             ) : (
               <>
-                {filterProductByPriceRange.map((item) => {
+                {filterOnlyGifts.map((item) => {
                   const {
                     category,
                     rating,

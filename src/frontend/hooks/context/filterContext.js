@@ -13,11 +13,12 @@ export const FilterContextProvider = ({ children }) => {
   const [categoriesData] = useState(categories);
   const [products, setProducts] = useState([]);
 
-
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://admin-panel-j1q2.onrender.com/product");
+        const response = await axios.get(
+          "https://admin-panel-j1q2.onrender.com/product"
+        );
         setProducts(response.data.map((item) => ({ ...item, qty: 1 })));
       } catch (error) {
         if (error.response && error.response.status === 404) {
@@ -43,6 +44,7 @@ export const FilterContextProvider = ({ children }) => {
     luxurySets: false,
     priceRange: 1200,
     dressingTables: false,
+    showGifts: false,
   });
   const {
     sort,
@@ -54,6 +56,7 @@ export const FilterContextProvider = ({ children }) => {
     luxurySets,
     dressingTables,
     priceRange,
+    showGifts,
   } = filterState;
 
   let filterBySearch =
@@ -84,6 +87,12 @@ export const FilterContextProvider = ({ children }) => {
     ? filterProductByRating.filter(({ price }) => Number(price) <= priceRange)
     : filterProductByRating;
 
+  const filterOnlyGifts = showGifts
+    ? filterProductByPriceRange.filter(
+        (item) => item.category === "Gifts for beloved"
+      )
+    : filterProductByPriceRange;
+
   return (
     <filterContext.Provider
       value={{
@@ -102,6 +111,7 @@ export const FilterContextProvider = ({ children }) => {
         categoriesData,
         products,
         filteredArray,
+        filterOnlyGifts,
       }}
     >
       {children}

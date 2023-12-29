@@ -60,6 +60,11 @@ export const filterReducer = (filterState, { type, payload }) => {
         ...filterState,
         priceRange: payload,
       };
+    case "FILTER_GIFTS":
+      return {
+        ...filterState,
+        showGifts: true,
+      };
     case "RESET_ALL_FILTER":
       return {
         filteredArray: [],
