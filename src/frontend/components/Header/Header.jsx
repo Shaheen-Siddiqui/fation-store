@@ -59,7 +59,7 @@ export const Header = ({ bars, setBars }) => {
             <div className="hdr-logo">
               {/* <FontAwesomeIcon icon={faBlenderPhone} /> */}
               <FontAwesomeIcon icon={faHatCowboy} />
-              <h2 className="logo-name">Amanullah store</h2>
+              <h2 className="logo-name">Abdullah store</h2>
             </div>
           </Link>
 
