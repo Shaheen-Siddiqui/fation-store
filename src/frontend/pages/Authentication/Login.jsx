@@ -114,7 +114,7 @@ export const LogIn = () => {
           )}
         </div>
 
-        <button className="login-btns" type="submit" disabled={loading}>
+        <button className="login-btns" type="submit">
           {loading ? 'Logging in...' : 'Log In'}
         </button>
 

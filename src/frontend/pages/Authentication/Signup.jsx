@@ -1,13 +1,13 @@
-import { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import axios from 'axios';
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 
 // internal imports
-import './authentication.css';
-import { toast } from 'react-toastify';
-import { authContext } from '../../hooks/context/authContext';
+import "./authentication.css";
+import { toast } from "react-toastify";
+import { authContext } from "../../hooks/context/authContext";
 
 export const SignUp = () => {
   const navigate = useNavigate();
@@ -17,10 +17,10 @@ export const SignUp = () => {
   const { setAuthDispatch } = useContext(authContext);
 
   const [userInformation, setUserInformation] = useState({
-    email: '',
-    fullName: '',
-    password: '',
-    phoneNumber: '',
+    email: "",
+    fullName: "",
+    password: "",
+    phoneNumber: "",
   });
   const { fullName, email, password, phoneNumber } = userInformation;
 
@@ -30,25 +30,25 @@ export const SignUp = () => {
 
     try {
       const res = await axios.post(
-        'https://abcstore-backend.onrender.com/signup',
+        "https://abcstore-backend.onrender.com/signup",
         userInformation
       );
 
       setAuthDispatch({
-        type: 'USER_VELIDATED',
+        type: "USER_VELIDATED",
         payload: {
           user: res.data.data,
           token: res.data.token,
         },
       });
 
-      localStorage.setItem('user', JSON.stringify(res.data.data));
-      localStorage.setItem('token', res.data.token);
+      localStorage.setItem("user", JSON.stringify(res.data.data));
+      localStorage.setItem("token", res.data.token);
 
-      toast.success('Signed up successfully!', { className: 'toast-styling' });
-      navigate('/product-listing');
+      toast.success("Signed up successfully!", { className: "toast-styling" });
+      navigate("/product-listing");
     } catch (error) {
-      toast.error(error.response.data.error, { className: 'toast-styling' });
+      toast.error(error.response.data.error, { className: "toast-styling" });
       console.log(error);
     } finally {
       setLoading(false); // Set loading back to false when the registration process is complete
@@ -132,7 +132,7 @@ export const SignUp = () => {
               required
               className="hided-input"
               value={password}
-              type={passwordIcon ? 'password' : 'text'}
+              type={passwordIcon ? "password" : "text"}
               id="password"
               autoComplete="off"
               name="password"
@@ -159,8 +159,8 @@ export const SignUp = () => {
             )}
           </div>
 
-          <button type="submit" className="login-btns" disabled={loading}>
-            {loading ? ' Loading...' : 'Register'}
+          <button type="submit" className="login-btns">
+            {loading ? "Signing... up" : "Register"}
           </button>
 
           <p className="new-account">
