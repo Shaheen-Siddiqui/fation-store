@@ -1,57 +1,61 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { toast } from "react-toastify";
-import axios from "axios";
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { toast } from 'react-toastify';
+import axios from 'axios';
 
-import "./authentication.css";
-import { authContext } from "../../hooks/context/authContext";
+import './authentication.css';
+import { authContext } from '../../hooks/context/authContext';
 
 export const LogIn = () => {
   const navigate = useNavigate();
   const [passwordIcon, setPasswordIcon] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [userLoginCredential, setUserLoginCredential] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
-  const { setAuthDispatch} = useContext(authContext);
+  const { setAuthDispatch } = useContext(authContext);
   const { email, password } = userLoginCredential;
 
   const userLoginHandler = async (event) => {
     event.preventDefault();
+    setLoading(true);
+
     try {
       const res = await axios.post(
-        "https://abcstore-backend.onrender.com/login",
+        'https://abcstore-backend.onrender.com/login',
         userLoginCredential
       );
       setAuthDispatch({
-        type: "USER_VELIDATED",
+        type: 'USER_VELIDATED',
         payload: {
           user: res.data.data,
           token: res.data.token,
         },
       });
 
-      localStorage.setItem("user", JSON.stringify(res.data.data));
-      localStorage.setItem("token", res.data.token);
+      localStorage.setItem('user', JSON.stringify(res.data.data));
+      localStorage.setItem('token', res.data.token);
 
-      toast.success("Logged in successfully!", { className: "toast-styling" });
-      navigate("/product-listing");
+      toast.success('Logged in successfully!', { className: 'toast-styling' });
+      navigate('/product-listing');
     } catch (error) {
       if (error.response) {
-        toast.error(error.response.data.error, { className: "toast-styling" });
+        toast.error(error.response.data.error, { className: 'toast-styling' });
       } else if (error.request) {
-        toast.error("No response received from server", {
-          className: "toast-styling",
+        toast.error('No response received from server', {
+          className: 'toast-styling',
         });
       } else {
-        toast.error("Error occurred while logging in", {
-          className: "toast-styling",
+        toast.error('Error occurred while logging in', {
+          className: 'toast-styling',
         });
       }
-      console.log(error, "ERROR");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -83,7 +87,7 @@ export const LogIn = () => {
         <div className="hide-input-case">
           <input
             value={password}
-            type={passwordIcon ? "password" : "text"}
+            type={passwordIcon ? 'password' : 'text'}
             className="hided-input"
             required
             id="password"
@@ -108,21 +112,16 @@ export const LogIn = () => {
             />
           )}
         </div>
-        {/* <button
-          className="login-btns"
-          type="submit"
-          onClick={guestCredentialHandler}
-        >
-          Enter Guest credentials
-        </button> */}
-        <button className="login-btns" type="submit">
-          LogIn
+
+        <button className="login-btns" type="submit" disabled={loading}>
+          {loading ? 'Logging in...' : 'Log In'}
         </button>
+
         <p className="new-account">
           Not a user yet?
           <Link to="/sign-up">
             <strong>
-              <u>Create Acoount</u>
+              <u>Create Account</u>
             </strong>
           </Link>
         </p>
