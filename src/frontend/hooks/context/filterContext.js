@@ -9,17 +9,21 @@ import { categories } from "../../../db/categories";
 export const filterContext = createContext();
 
 export const FilterContextProvider = ({ children }) => {
-  const [productLoding] = useState(false);
+  const [productLoding, setProductsLoading] = useState(false);
   const [categoriesData] = useState(categories);
   const [products, setProducts] = useState([]);
+  // const [loading, setLoading] = useState(false);
+
 
   useEffect(() => {
     const fetchProducts = async () => {
+      setProductsLoading(true)
       try {
         const response = await axios.get(
           "https://admin-panel-j1q2.onrender.com/product"
         );
         setProducts(response.data.map((item) => ({ ...item, qty: 1 })));
+        setProductsLoading(false)
       } catch (error) {
         if (error.response && error.response.status === 404) {
           toast.error("No Product Found:");

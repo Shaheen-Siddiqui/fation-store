@@ -11,6 +11,7 @@ import { authContext } from '../../hooks/context/authContext';
 export const LogIn = () => {
   const navigate = useNavigate();
   const [passwordIcon, setPasswordIcon] = useState(false);
+
   const [loading, setLoading] = useState(false);
 
   const [userLoginCredential, setUserLoginCredential] = useState({

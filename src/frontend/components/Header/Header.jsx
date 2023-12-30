@@ -99,7 +99,7 @@ export const Header = ({ bars, setBars }) => {
             </Link>
           </div>
           <div
-            className={bars ? "responsive-bars" : "bars"}
+            className={bars===true ? "responsive-bars" : "bars"}
             onClick={() => setBars(!bars)}
           >
             <FontAwesomeIcon icon={faBars} size="2xl" />
@@ -151,9 +151,12 @@ export const Header = ({ bars, setBars }) => {
           <p className="current-user-detail">{user.fullName}</p>
           <h2>email</h2>
           <p className="current-user-detail">{user.email}</p>
-          <Link to="/user-profile" onClick={() => setIsUserCaseOpen(false)}>
-            <button className="address-btn">{user.phoneNumber}</button>
-          </Link>
+          <button
+            className="address-btn"
+            onClick={() => setIsUserCaseOpen(false)}
+          >
+            {user.phoneNumber}
+          </button>
         </div>
       )}
     </>
