@@ -1,22 +1,13 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import SimpleImageSlider from "react-simple-image-slider";
 
 //internal imports
 import "./Home.css";
 import "../../components/Header/Header.css";
 import { Footer } from "../../components/Footer/Footer";
-import {
-  // godregBrand,
-  // hometownBrand,
-  // nilKamal,
-  // woodenStreetBrand,
-  sliderImages,
-} from "../../assets";
 import { filterContext } from "../../hooks/context/filterContext";
 
 export const Home = () => {
-  const [_, setImageNum] = useState(1);
   const { categoriesData, setfilterDispatch } = useContext(filterContext);
 
   useEffect(() => {
@@ -25,20 +16,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="hero-img-case">
-        <SimpleImageSlider
-          width={"100%"}
-          height={390}
-          images={sliderImages}
-          showBullets={true}
-          showNavs={true}
-          autoPlay={true}
-          onStartSlide={(index, length) => {
-            setImageNum(index);
-          }}
-          autoPlayDelay={2}
-        />
-      </div>
+        <img className="hero-img-case" src="http://res.cloudinary.com/dunfe1kwv/image/upload/v1703916978/ajgohaa8imssv0nqqync.png" alt="hero" />
       <center>
         <Link to="/product-listing">
           <button className="button">
@@ -53,12 +31,14 @@ export const Home = () => {
         {categoriesData.map(({ categoryImage, categoryName }, index) => {
           return (
             <figure key={index}>
-              <img
-                className="uniq-img"
-                src={categoryImage}
-                alt={categoryName}
-              />
-              <h2>{categoryName}</h2>
+              <Link to="/product-listing">
+                <img
+                  className="uniq-img"
+                  src={categoryImage}
+                  alt={categoryName}
+                />
+                <h2 className="img-figure">{categoryName}</h2>
+              </Link>
             </figure>
           );
         })}
@@ -71,12 +51,12 @@ export const Home = () => {
           src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0004/8504/brand.gif?itok=j8YhOFgu"
           alt="brand"
           className="unique-brands"
-          />
+        />
         <img
           alt="brand"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAePGP9j7PoYpxs1L37PgQiJaQBh-RdvXpGeOvKNk8laPxsTJ1SolvBulTBsBhc69RMOA&usqp=CAU"
           className="unique-brands"
-          />
+        />
         <img
           src="https://c8.alamy.com/comp/2J696ED/waistcoat-icon-monochrome-simple-clothes-icon-for-templates-web-design-and-infographics-2J696ED.jpg"
           alt="brand"

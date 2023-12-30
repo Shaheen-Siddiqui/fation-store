@@ -11,12 +11,13 @@ import { authContext } from "../../hooks/context/authContext";
 export const LogIn = () => {
   const navigate = useNavigate();
   const [passwordIcon, setPasswordIcon] = useState(false);
+  const [loginLoading, setLoginLoading] = useState(false);
 
   const [userLoginCredential, setUserLoginCredential] = useState({
     email: "",
     password: "",
   });
-  const { setAuthDispatch} = useContext(authContext);
+  const { setAuthDispatch } = useContext(authContext);
   const { email, password } = userLoginCredential;
 
   const userLoginHandler = async (event) => {

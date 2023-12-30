@@ -4,8 +4,27 @@
 
 
 .hero-img-case {
-    margin-top: 2rem;
-   }
+    height: 50rem;
+    width: 90%;
+    margin: 0 5%;
+}
+
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px); /* Adjust the bounce height */
+    }
+  }
+  
+  .hero-img-case {
+    animation: bounce 2s infinite;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Adjust the shadow properties */
+    border-radius: 5px;
+
+  }
+  
 
 .brands-case,
 .home-categories {
@@ -82,4 +101,17 @@
 .button:hover span:after {
     opacity: 0.7;
     right: 0;
+}
+
+.img-figure {
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+
+@media (width < 768px) {
+.hero-img-case {
+
+    height: 23rem;
+    margin-top: 2rem;
+}
 }

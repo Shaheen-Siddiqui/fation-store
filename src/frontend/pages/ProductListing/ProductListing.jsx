@@ -8,7 +8,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Audio } from "react-loader-spinner";
 import { Link } from "react-router-dom";
 
-
 //internal imports
 import "./ProductListing.css";
 import "../../components/Header/Header.css";
@@ -49,32 +48,23 @@ export const ProductListing = () => {
             ) : (
               <>
                 {filterOnlyGifts.map((item) => {
-                  const {
-                    category,
-                    rating,
-                    price,
-                    title,
-                    imageUrl,
-                    _id,
-                  } = item;
+                  const { category, rating, price, title, imageUrl, _id } =
+                    item;
                   return (
                     <div className="product" key={_id}>
                       {/* <Link to={`/product-detail/${_id}`}> */}
-                        <img
-                          className="product-img"
-                          src={imageUrl}
-                          alt="a new collections"
-                        />
+                      <img
+                        className="product-img"
+                        src={imageUrl}
+                        alt="a new collections"
+                      />
                       {/* </Link> */}
 
                       <div className="product-cantent">
                         <h2 className="product-name">{title}</h2>
-                        <h2>
-                          price: {price} &nbsp;
-                        </h2>
-                        <p>{category} </p>
-                        <div className="rating-stuff">
-                        </div>
+                        <h2>price: {price} &nbsp;</h2>
+                        <p className="product-category-name">{category} </p>
+                        <div className="rating-stuff"></div>
                         <div className="cart-wishlist">
                           <div className="addtocart-btn">
                             {isAddedIntoCart(item) ? (
@@ -99,8 +89,10 @@ export const ProductListing = () => {
                               </button>
                             )}
                           </div>
-                          <strong  style={{fontSize:'1.6rem', color:"yellow"}}>
-                            <FontAwesomeIcon icon={faStar}/>
+                          <strong
+                            style={{ fontSize: "1.6rem", color: "black" }}
+                          >
+                            <FontAwesomeIcon icon={faStar} />
                             <em>{rating}</em>
                           </strong>
                         </div>
