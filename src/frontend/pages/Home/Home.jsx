@@ -16,7 +16,11 @@ export const Home = () => {
 
   return (
     <>
-        <img className="hero-img-case" src="http://res.cloudinary.com/dunfe1kwv/image/upload/v1703916978/ajgohaa8imssv0nqqync.png" alt="hero" />
+      <img
+        className="hero-img-case"
+        src="http://res.cloudinary.com/dunfe1kwv/image/upload/v1703916978/ajgohaa8imssv0nqqync.png"
+        alt="hero"
+      />
       <center>
         <Link to="/product-listing">
           <button className="button">

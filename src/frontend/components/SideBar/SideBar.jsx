@@ -256,7 +256,7 @@ export const SideBar = () => {
             className="shining-button"
             onClick={() => setfilterDispatch({type:'FILTER_GIFTS'})}
           >
-            Look Towards Gifts &raquo;
+            Look Towards Gifts 🎁 &raquo;
           </button>
         </div>
       </div>
