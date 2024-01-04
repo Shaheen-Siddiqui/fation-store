@@ -18,7 +18,9 @@ export const Home = () => {
     <>
       <img
         className="hero-img-case"
-        src="http://res.cloudinary.com/dunfe1kwv/image/upload/v1703916978/ajgohaa8imssv0nqqync.png"
+        src="https://i.ytimg.com/vi/L3mSB5_cBZw/maxresdefault.jpg"
+        // src="https://i.ytimg.com/vi/sEpqyvkuI7Y/maxresdefault.jpg"
+
         alt="hero"
       />
       <center>

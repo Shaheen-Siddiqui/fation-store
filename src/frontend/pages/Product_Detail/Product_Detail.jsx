@@ -51,8 +51,8 @@ const Product_Detail = () => {
               <h3>Color Available:</h3>
               <div className="size-options">
                 {findProduct?.availableColor.map((color, index) => (
-                  <button key={index} style={{ backgroundColor: `${color}` }}>
-                    {color}
+                  <button key={index} style={{ backgroundColor: `${color}` }} className="color-options">
+                    <span></span>
                   </button>
                 ))}
               </div>

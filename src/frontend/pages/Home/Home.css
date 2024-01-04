@@ -2,13 +2,6 @@
 
 /* @import url('https://fonts.googleapis.com/css?family=Poppins:900i'); */
 
-
-.hero-img-case {
-    height: 50rem;
-    width: 90%;
-    margin: 0 5%;
-}
-
 @keyframes bounce {
     0%, 100% {
       transform: translateY(0);
@@ -22,7 +15,9 @@
     animation: bounce 2s infinite;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Adjust the shadow properties */
     border-radius: 5px;
-
+    height: 50rem;
+    width: 90%;
+    margin: 25px 5%;
   }
   
 
@@ -115,7 +110,6 @@
 
 @media (width < 768px) {
 .hero-img-case {
-
     height: 23rem;
     margin-top: 2rem;
 

@@ -43,7 +43,7 @@ export const ProductListing = () => {
             {!filterBySearch.length ? (
               <h1
                 style={{ color: "gray" }}
-              >{`Opps! nothing Matches Title: ${search}`}</h1>
+              >{`Opps! nothing Matches : ${search}`}</h1>
             ) : (
               <>
                 {filterOnlyGifts.map((item) => {
