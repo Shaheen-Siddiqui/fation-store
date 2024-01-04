@@ -1,5 +1,6 @@
 .all-products-page {
-    gap: 2.5rem;
+    row-gap: 20px;
+
     display: flex;
     flex-wrap: wrap;
     margin-left: 26rem;
