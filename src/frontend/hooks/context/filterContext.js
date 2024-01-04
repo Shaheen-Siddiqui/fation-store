@@ -24,6 +24,7 @@ export const FilterContextProvider = ({ children }) => {
         );
         setProducts(response.data.map((item) => ({ ...item, qty: 1 })));
         setProductsLoading(false)
+
       } catch (error) {
         if (error.response && error.response.status === 404) {
           toast.error("No Product Found:");
@@ -46,7 +47,6 @@ export const FilterContextProvider = ({ children }) => {
     beds: false,
     loading: false,
     luxurySets: false,
-    priceRange: 1200,
     dressingTables: false,
     showGifts: false,
   });
@@ -59,7 +59,6 @@ export const FilterContextProvider = ({ children }) => {
     sofa,
     luxurySets,
     dressingTables,
-    priceRange,
     showGifts,
   } = filterState;
 
@@ -87,21 +86,17 @@ export const FilterContextProvider = ({ children }) => {
     ? sortProductByPrice.filter((item) => item.rating >= rating)
     : sortProductByPrice;
 
-  const filterProductByPriceRange = priceRange
-    ? filterProductByRating.filter(({ price }) => Number(price) <= priceRange)
-    : filterProductByRating;
-
   const filterOnlyGifts = showGifts
-    ? filterProductByPriceRange.filter(
+    ? filterProductByRating.filter(
         (item) => item.category === "Gifts for beloved"
       )
-    : filterProductByPriceRange;
+    : filterProductByRating;
+
 
   return (
     <filterContext.Provider
       value={{
         setfilterDispatch,
-        priceRange,
         search,
         rating,
         sort,

@@ -44,27 +44,7 @@ export const SideBar = () => {
             </button>
           )}
         </div>
-        <div
-          className="price-case"
-          onClick={() => setSearchParams({ filter: "active" })}
-        >
-          <h1 className="filter-price">Price</h1>
-          <p>(₹ 0 - ₹ {!priceRange ? 1200 : priceRange} )</p>
-          <input
-            value={priceRange}
-            type="range"
-            id="price-case"
-            min="0"
-            max="1200"
-            step="100"
-            onChange={(event) =>
-              setfilterDispatch({
-                type: "PRICE_RANGE",
-                payload: event.target.value,
-              })
-            }
-          />
-        </div>
+       
 
         {/* <div
           className="category-case"

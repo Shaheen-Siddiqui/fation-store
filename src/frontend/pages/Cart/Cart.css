@@ -29,7 +29,7 @@
 }
 .single-card-img {
     height: 28rem;
-    width: 35rem;
+    width: 30rem;
     border-right: 2px solid silver;
     box-shadow: 5px 5px 10px rgba(213, 201, 201, 0.7);
     border-radius: var(--border-radius);

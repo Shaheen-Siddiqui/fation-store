@@ -58,14 +58,14 @@
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
-    background-color: #f2f2f2;
+    background-color: #dedcdc;
     cursor: pointer;
     transition: all 0.3s ease;
   }
   
   .size-options button:hover,
   .quantity-options button:hover {
-    background-color: #e2e2e2;
+    background-color: #c5c2c2;
   }
   
   .color-options .color-option {
@@ -105,7 +105,7 @@
     background-color: #0056b3;
   }
 
-  .size-option, .image-thumbnail {
+  .size-option{
     border: 2px solid #e1e1e1;
     padding: 8px 16px;
     margin-right: 10px;
@@ -114,24 +114,23 @@
     transition: border-color 0.3s ease;
   }
   
-  .size-option.active, .image-thumbnail.active {
-    border-color: #007bff;
-  }
-  
   .image-options {
     display: flex;
     margin-top: 10px;
   }
   
   .image-thumbnail {
-    width: 60px;
+    width: 6rem;
     height: 60px;
-    object-fit: cover;
     margin-right: 10px;
     border-radius: 4px;
+    padding: 0.3rem;
+    border: solid 2px #a6bad0;
+    cursor: pointer;
+
   }
   
-  .image-thumbnail:hover, .image-thumbnail.active {
+  .image-thumbnail:hover {
     border-color: #007bff;
   }
   

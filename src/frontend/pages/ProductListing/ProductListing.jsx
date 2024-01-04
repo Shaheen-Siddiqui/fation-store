@@ -21,7 +21,6 @@ export const ProductListing = () => {
     useContext(filterContext);
 
   const { isAddedIntoCart, setProductDispatch } = useContext(productContext);
-  console.log(filterOnlyGifts);
   return (
     <div>
       <SideBar />
