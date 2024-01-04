@@ -22,6 +22,9 @@ const Checkout = lazy(() => import("./frontend/pages/Checkout/Checkout"));
 const PageNotFound = lazy(() =>
   import("./frontend/components/404Error/PageNotFound")
 );
+const Product_Detail = lazy(() =>
+  import("./frontend/pages/Product_Detail/Product_Detail")
+);
 
 function App() {
   const [bars, setBars] = useState(false);
@@ -63,7 +66,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             {/* *******PRIVATE PAGES*******   */}
-            
+
             <Route
               path="/cart"
               element={
@@ -76,6 +79,7 @@ function App() {
             {/********************************/}
             <Route path="/login" element={<LogIn />} />
             <Route path="/product-listing" element={<ProductListing />} />
+            <Route path="/detail/:productId" element={<Product_Detail />} />
             <Route path="/sign-up" element={<SignUp />} />
 
             <Route path="/mock" element={<Mockman />} />

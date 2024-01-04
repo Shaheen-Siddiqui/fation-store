@@ -25,6 +25,8 @@
 
 .login-btns {
     margin-top: 2.5rem;
+    background-color: var(--logo-color);
+    cursor: pointer;
 }
 
 .login-btns,
@@ -33,14 +35,6 @@
     border-radius: 5px;
     border: 2px solid var(--primary-color);
     outline: none;
-     background-color: white;
-
-}
-
-.login-btns {
-    background-color: var(--logo-color);
-    padding: 0.7rem;
-    cursor: pointer;
 }
 
 .form-lable,
@@ -59,11 +53,11 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-     border-radius: 5px;
+    border-radius: 5px;
     border: 2px solid var(--primary-color);
-    outline:none ;
-     padding: 0.5rem;
-     background-color: white;
+    outline: none;
+    padding: 0.5rem;
+    background-color: white;
 
 
 }
@@ -71,6 +65,6 @@ p {
 .eye-icon {
     cursor: pointer;
     padding: 0.1rem 1rem;
-   
+
 
 }

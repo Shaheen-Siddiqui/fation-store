@@ -42,7 +42,7 @@ export const Header = ({ bars, setBars }) => {
           <Link to="/" className="remove-ud">
             <div className="hdr-logo">
               <FontAwesomeIcon icon={faHatCowboy} />
-              <h2 className="logo-name">Abdullah store</h2>
+              <h2 className="logo-name">Abdullah Store</h2>
             </div>
           </Link>
 

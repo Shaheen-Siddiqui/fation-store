@@ -101,7 +101,6 @@ export const FilterContextProvider = ({ children }) => {
     <filterContext.Provider
       value={{
         setfilterDispatch,
-        filterProductByPriceRange,
         priceRange,
         search,
         rating,

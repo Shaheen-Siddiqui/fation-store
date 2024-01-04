@@ -56,11 +56,13 @@ export const Cart = () => {
               } = item;
               return (
                 <div className="single-card" key={_id}>
+                  <Link to={`/detail/${_id}`}>
                   <img
                     src={imageUrl}
                     alt="new bedsheets new designs"
                     className="single-card-img"
                   />
+                  </Link>
                   <div className="card-rightside">
                     <h2 className="card-heading">{category}</h2>
                     <div className="product-price">

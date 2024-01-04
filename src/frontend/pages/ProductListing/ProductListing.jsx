@@ -21,7 +21,7 @@ export const ProductListing = () => {
     useContext(filterContext);
 
   const { isAddedIntoCart, setProductDispatch } = useContext(productContext);
-
+  console.log(filterOnlyGifts);
   return (
     <div>
       <SideBar />
@@ -52,13 +52,15 @@ export const ProductListing = () => {
                     item;
                   return (
                     <div className="product" key={_id}>
-                      {/* <Link to={`/product-detail/${_id}`}> */}
-                      <img
-                        className="product-img"
-                        src={imageUrl}
-                        alt="a new collections"
-                      />
-                      {/* </Link> */}
+                      <Link to={`/detail/${_id}`}>
+                        <center>
+                          <img
+                            className="product-img"
+                            src={imageUrl}
+                            alt="a new collections"
+                          />
+                        </center>
+                      </Link>
 
                       <div className="product-cantent">
                         <h2 className="product-name">{title}</h2>
@@ -90,7 +92,7 @@ export const ProductListing = () => {
                             )}
                           </div>
                           <strong
-                            style={{ fontSize: "1.6rem", color: "black" }}
+                            style={{ fontSize: "1.2rem", color: "black" }}
                           >
                             <FontAwesomeIcon icon={faStar} />
                             <em>{rating}</em>
