@@ -1,20 +1,20 @@
-import "./Header.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
-import Tippy from "@tippyjs/react";
+import './Header.css';
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
+import Tippy from '@tippyjs/react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faHatCowboy,
+
   faMagnifyingGlass,
   faCartArrowDown,
   faAddressCard,
   faBars,
-} from "@fortawesome/free-solid-svg-icons";
-import { filterContext } from "../../hooks/context/filterContext";
-import { productContext } from "../../hooks/context/productsContext";
-import { authContext } from "../../hooks/context/authContext";
-import { toast } from "react-toastify";
+} from '@fortawesome/free-solid-svg-icons';
+import { filterContext } from '../../hooks/context/filterContext';
+import { productContext } from '../../hooks/context/productsContext';
+import { authContext } from '../../hooks/context/authContext';
+import { toast } from 'react-toastify';
 
 export const Header = ({ bars, setBars }) => {
   const [isUserCaseOpen, setIsUserCaseOpen] = useState(false);
@@ -24,14 +24,14 @@ export const Header = ({ bars, setBars }) => {
   const navigate = useNavigate();
 
   const userLogoutHandler = () => {
-    setAuthDispatch({ type: "USER_LOGOUT" });
+    setAuthDispatch({ type: 'USER_LOGOUT' });
 
-    localStorage.removeItem("user");
-    localStorage.removeItem("token");
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
 
-    toast.info("logged out successfully", {
+    toast.info('logged out successfully', {
       autoClose: 2000,
-      className: "toast-styling",
+      className: 'toast-styling',
     });
   };
 
@@ -41,7 +41,12 @@ export const Header = ({ bars, setBars }) => {
         <div className="header-container">
           <Link to="/" className="remove-ud">
             <div className="hdr-logo">
-              <FontAwesomeIcon icon={faHatCowboy} />
+              <img
+                className="logo-img "
+                src="https://i.ibb.co/M6zm0Rh/logo.jpg"
+                alt="logo"
+                border="0"
+              />
               <h2 className="logo-name">Abdullah Store</h2>
             </div>
           </Link>
@@ -54,11 +59,11 @@ export const Header = ({ bars, setBars }) => {
               value={search}
               onChange={(event) =>
                 setfilterDispatch({
-                  type: "SEARCH_PRODUCTS",
+                  type: 'SEARCH_PRODUCTS',
                   payload: event.target.value,
                 })
               }
-              onKeyPress={(e) => e.which === 13 && navigate("/product-listing")}
+              onKeyPress={(e) => e.which === 13 && navigate('/product-listing')}
             />
             <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
           </div>
@@ -99,7 +104,7 @@ export const Header = ({ bars, setBars }) => {
             </Link>
           </div>
           <div
-            className={bars===true ? "responsive-bars" : "bars"}
+            className={bars === true ? 'responsive-bars' : 'bars'}
             onClick={() => setBars(!bars)}
           >
             <FontAwesomeIcon icon={faBars} size="2xl" />
@@ -141,7 +146,7 @@ export const Header = ({ bars, setBars }) => {
             </Link>
           </div>
         ) : (
-          ""
+          ''
         )}
       </div>
 
