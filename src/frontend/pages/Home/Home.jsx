@@ -18,9 +18,7 @@ export const Home = () => {
     <>
       <img
         className="hero-img-case"
-        src="https://i.ytimg.com/vi/L3mSB5_cBZw/maxresdefault.jpg"
-        // src="https://i.ytimg.com/vi/sEpqyvkuI7Y/maxresdefault.jpg"
-
+        src="https://i.ytimg.com/vi/sEpqyvkuI7Y/maxresdefault.jpg"
         alt="hero"
       />
       <center>

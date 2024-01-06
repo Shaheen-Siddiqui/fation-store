@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {
   faStar,
   faCartPlus,
@@ -17,15 +17,17 @@ import { productContext } from "../../hooks/context/productsContext";
 import { SideBar } from "../../components/SideBar/SideBar";
 
 export const ProductListing = () => {
+  const [toggleBtn, setToggleBtn] = useState(false);
+
   const { search, filterOnlyGifts, filterBySearch, productLoding } =
     useContext(filterContext);
 
   const { isAddedIntoCart, setProductDispatch } = useContext(productContext);
   return (
     <div>
-      <SideBar />
+      <SideBar  toggleBtn={toggleBtn} setToggleBtn={setToggleBtn}/>
 
-      <div className="all-products-page">
+      <div className={ `all-products-page ${toggleBtn? 'hide-product-page':"all-products"}` }>
         {productLoding ? (
           <h1 style={{ marginLeft: "40rem" }}>
             <Audio

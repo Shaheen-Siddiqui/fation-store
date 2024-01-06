@@ -1,26 +1,34 @@
 import "./SideBar.css";
 import { filterContext } from "../../hooks/context/filterContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { toast } from "react-toastify";
 import { useSearchParams } from "react-router-dom";
 
-export const SideBar = () => {
-  const {
-    setfilterDispatch,
-    sort,
-    rating,
-    priceRange,
-  
-  } = useContext(filterContext);
+export const SideBar = ({ toggleBtn, setToggleBtn }) => {
+  const { setfilterDispatch, sort, rating, priceRange } =
+    useContext(filterContext);
 
   const [searchParameter, setSearchParams] = useSearchParams();
   return (
     <>
-      <div className="sidebar-container">
+      {
+        <button
+          className="reset-filter hide-resetfilter"
+          onClick={() => setToggleBtn(!toggleBtn)}
+        >
+          Filters
+        </button>
+      }
+      <div
+        className={`sidebar-container ${
+          toggleBtn ? "sidebar-container" : "hide-sidebar"
+        }`}
+      >
         <div className="filters">
           <h1>Filters</h1>
           {!searchParameter.size ? (
             <button
+              className="reset-filter"
               onClick={() => {
                 setSearchParams({});
                 setfilterDispatch({ type: "RESET_ALL_FILTER" });
@@ -30,6 +38,7 @@ export const SideBar = () => {
             </button>
           ) : (
             <button
+              className="reset-filter"
               onClick={() => {
                 setSearchParams({});
                 setfilterDispatch({ type: "RESET_ALL_FILTER" });
@@ -44,74 +53,6 @@ export const SideBar = () => {
             </button>
           )}
         </div>
-       
-
-        {/* <div
-          className="category-case"
-          onClick={() => setSearchParams({ filter: "active" })}
-        > */}
-        {/* <h3>Category</h3>
-          <label htmlFor="bed">
-            <input
-              checked={beds}
-              type="checkbox"
-              name="category"
-              id="bed"
-              onChange={(event) =>
-                setfilterDispatch({
-                  type: "FILTER_BEDS",
-                  payload: event.target.checked,
-                })
-              }
-            />{" "}
-            Bed's
-          </label>
-
-          <label htmlFor="Dressing Table's">
-            <input
-              checked={dressingTables}
-              type="checkbox"
-              id="Dressing Table's"
-              onChange={(event) =>
-                setfilterDispatch({
-                  type: "FILTER_DRESSING_TABLES",
-                  payload: event.target.checked,
-                })
-              }
-            />
-            Dressing Table's
-          </label>
-
-          <label htmlFor="sofa">
-            <input
-              checked={sofa}
-              type="checkbox"
-              id="sofa"
-              onChange={(event) =>
-                setfilterDispatch({
-                  type: "FILTER_SOFAS",
-                  payload: event.target.checked,
-                })
-              }
-            />
-            Sofa's
-          </label>
-
-          <label htmlFor="luxury set">
-            <input
-              checked={luxurySets}
-              type="checkbox"
-              id="luxury set"
-              onChange={(event) =>  
-                setfilterDispatch({
-                  type: "FILTER_LUXURY_SET",
-                  payload: event.target.checked,
-                })
-              }
-            />
-            luxury Set's
-          </label>
-        </div> */}
 
         <div
           className="rating-case"
@@ -229,12 +170,13 @@ export const SideBar = () => {
         >
           <button
             className="shining-button"
-            onClick={() => setfilterDispatch({type:'FILTER_GIFTS'})}
+            onClick={() => setfilterDispatch({ type: "FILTER_GIFTS" })}
           >
             Look Towards Gifts 🎁 &raquo;
           </button>
         </div>
       </div>
+      {/* )} */}
     </>
   );
 };

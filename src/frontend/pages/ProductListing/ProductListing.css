@@ -1,12 +1,19 @@
 .all-products-page {
     row-gap: 20px;
-
     display: flex;
     flex-wrap: wrap;
     margin-left: 26rem;
     padding: 3rem;
     justify-content: center;
 }
+.hide-product-page{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    /* margin-top: 30rem; */
+}
+
 
 .product {
     width: 27rem;
@@ -77,4 +84,11 @@
 
 .product-detail-cantent {
     width: 30rem;
+}
+
+@media (width < 768px) {
+    .all-products{
+        margin-left: 1rem;
+    
+    }
 }

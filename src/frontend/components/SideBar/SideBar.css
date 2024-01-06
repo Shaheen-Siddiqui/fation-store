@@ -6,20 +6,22 @@
     overflow-x: hidden;
     overflow-y: auto;
     margin-top: 3rem;
-
 }
+.hide-resetfilter{
+  display: none;
+}
+
 .filters{
     display: flex;
     justify-content: space-between;
     margin-bottom: 1rem;
-
 }
 
-.filters button{
-    padding: 0.1rem 1rem;
-    font-family: serif;
-    border: 2px solid var(--primary-color);
-    cursor: pointer;
+.reset-filter{
+  padding: 0.1rem 1rem;
+  font-family: serif;
+  border: 2px solid var(--primary-color);
+  cursor: pointer;
 }
 
 .price-case p{
@@ -84,3 +86,12 @@
     background-color: white;
   }
   
+ 
+  @media (width < 768px) {
+    .hide-sidebar{
+      display: none;
+    }
+    .hide-resetfilter{
+      display: block;
+    }
+  }
